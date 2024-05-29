@@ -1,0 +1,24 @@
+import unittest
+from fact import factorial
+
+
+class TestFactorial(unittest.TestCase):
+
+    def test_factorial_positive(self):
+        self.assertEqual(factorial(5), 120)
+        self.assertEqual(factorial(3), 6)
+        self.assertEqual(factorial(1), 1)
+
+    def test_factorial_zero(self):
+        self.assertEqual(factorial(0), 1)
+
+    def test_factorial_negative(self):
+        with self.assertRaises(ValueError):
+            factorial(-1)
+
+    def test_factorial_large(self):
+        self.assertEqual(factorial(10), 3628800)
+
+
+if __name__ == "__main__":
+    unittest.main()
