@@ -14,3 +14,5 @@ def factorial(n):
         for i in range(2, n + 1):
             result *= i
         return result
+n = 5
+print(factorial(n))
